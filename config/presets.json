@@ -3,25 +3,30 @@
     "linkedin": {
       "image": "https://cdx.solo.to/images/link/linkedin.svg",
       "description": "www.linkedin.com",
+      "name": "LinkedIn",
       "color": "blue"
     },
     "github": {
       "image": "https://cdx.solo.to/images/link/github.svg",
       "description": "github.com",
+      "name": "Github",
       "color": "black"
     },
     "twitter": {
       "image": "https://cdx.solo.to/images/link/twitter.svg",
       "description": "twitter.com",
+      "name": "Twitter",
       "color": "blue"
     },
     "steam": {
       "image": "https://cdx.solo.to/images/link/steam.svg",
       "description": "steamcommunity.com",
+      "name": "Steam",
       "color": "blue"
     },
     "mastodon": {
       "image": "https://cdx.solo.to/images/link/icon.svg",
+      "name": "Mastodon",
       "color": "slate"
     },
     "default": {
