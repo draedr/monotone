@@ -1,0 +1,16 @@
+{
+  "links": {
+    "linkedin": {
+      "image": "https://cdx.solo.to/images/link/linkedin.svg",
+      "description": "www.linkedin.com",
+      "color": "blue"
+    },
+    "default": {
+      "image": "https://cdx.solo.to/images/link/icon.svg",
+      "description": "",
+      "color": "red",
+      "invert": true
+    }
+  },
+  "contacts": []
+}

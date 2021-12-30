@@ -1,0 +1,42 @@
+{
+  "name": "felino-neptune",
+  "location": "C:\\Users\\Public\\AppData\\Local",
+  "bio": "Italian - 21yo - software developer - gay - huge geek",
+  
+  "theme": {
+    "color": "red",
+    "footer": true
+  },
+
+  "links": [
+    [
+      {"url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
+      {"url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
+      {"preset": "default","url": "https://cdx.solo.to/images/link/icon.svg"},
+      {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"},
+      {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"}
+    ],
+    [
+      {"type": "section", "title": "My Music"}
+    ],
+    [
+      {"type": "embed", "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/275777814&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"}
+    ],
+    [
+      {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"},
+      {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"}
+    ]
+  ],
+  "contacts": [
+    {
+      "icon": "email",
+      "name": "Email",
+      "uri": "mailto:mtondelli1420@gmail.com"
+    },
+    {
+      "icon": "phone",
+      "name": "Phone",
+      "uri": "tel:123-456-7890"
+    }
+  ]
+}
