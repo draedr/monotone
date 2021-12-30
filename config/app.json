@@ -5,7 +5,7 @@
   "avatar": "/uploads/download20210405190812.jpg",
   "theme": {
     "color": "blue",
-    "background": "https://images.unsplash.com/photo-1640865004316-f8ff4f8b2ba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "background": "/uploads/jacky-zeng-tqsfdwxryq4-unsplash.jpg",
     "contacts": {
       "name": true,
       "rounded": false,
