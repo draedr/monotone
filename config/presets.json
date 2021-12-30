@@ -5,6 +5,25 @@
       "description": "www.linkedin.com",
       "color": "blue"
     },
+    "github": {
+      "image": "https://cdx.solo.to/images/link/github.svg",
+      "description": "github.com",
+      "color": "black"
+    },
+    "twitter": {
+      "image": "https://cdx.solo.to/images/link/twitter.svg",
+      "description": "twitter.com",
+      "color": "blue"
+    },
+    "steam": {
+      "image": "https://cdx.solo.to/images/link/steam.svg",
+      "description": "steamcommunity.com",
+      "color": "blue"
+    },
+    "mastodon": {
+      "image": "https://cdx.solo.to/images/link/icon.svg",
+      "color": "slate"
+    },
     "default": {
       "image": "https://cdx.solo.to/images/link/icon.svg",
       "description": "",
