@@ -27,13 +27,13 @@
     },
     {
       "preset": "twitter",
-      "name": "@azurelighting"
+      "name": "@azurelighting",
       "url": "https://twitter.com/azurelighting",
       "invert": true
     },
     {
       "preset": "steam",
-      "name": "felino-neptune"
+      "name": "felino-neptune",
       "url": "https://steamcommunity.com/id/felino-neptune/"
     },
     {
