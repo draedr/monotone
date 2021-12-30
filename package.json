@@ -3,6 +3,7 @@
     "@11ty/eleventy": "^0.12.1"
   },
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy"
   }
 }
