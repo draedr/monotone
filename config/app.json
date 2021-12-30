@@ -2,15 +2,22 @@
   "name": "felino-neptune",
   "location": "C:\\Users\\Public\\AppData\\Local",
   "bio": "Italian - 21yo - software developer - gay - huge geek",
+  "avatar": "https://cdx.solo.to/user/a/61b8aa73cdfdb9_10466869.jpg",
   
   "theme": {
-    "color": "red",
+    "color": "blue",
     "background": "https://images.unsplash.com/photo-1640865004316-f8ff4f8b2ba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "contacts": {
+      "name": true,
+      "rounded": false,
+      "full": true
+    },
+    "repo": true,
     "footer": true
   },
   "content": [
-    {"url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
-    {"url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
+    {"preset": "default","url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
+    {"preset": "default","url": "https://cdx.solo.to/images/link/icon.svg", "invert": true},
     {"preset": "default","url": "https://cdx.solo.to/images/link/icon.svg"},
     {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"},
     {"preset": "linkedin","url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"},
