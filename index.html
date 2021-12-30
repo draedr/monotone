@@ -119,7 +119,7 @@ templateEngineOverride: njk
           
           <!-- Link Object -->
             <a
-              href="#"
+              href="{{item.url}}"
               class="block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row {{ 'col-span-2' if colspan }}"
             >
               <div class="flex-grow ml-8 bg-white p-4 rounded shadow-2xl">
@@ -133,6 +133,14 @@ templateEngineOverride: njk
                   {% set image = presets.links[item.preset].image %}
                 {% else %}
                   {% set image = presets.links.default.image %}
+                {% endif %}
+                
+                {% if item.name %}
+                  {% set name = item.name %}
+                {% elif item.preset %}
+                  {% set name = presets.links[item.preset].name %}
+                {% else %}
+                  {% set name = item.url %}
                 {% endif %}
                 
                 {% if item.invert %}
@@ -154,7 +162,7 @@ templateEngineOverride: njk
                 </div>
                 <!-- Content -->
                 <div class="block flex-grow ml-8">
-                  <div class="text-lg">LinkedIn {{colspan}}</div>
+                  <div class="text-lg">{{name}}</div>
                   <div class="text-sm text-gray-400 font-light truncate">
                     {{item.url}}
                   </div>
