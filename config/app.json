@@ -16,46 +16,30 @@
   },
   "content": [
     {
-      "preset": "default",
-      "url": "https://cdx.solo.to/images/link/icon.svg",
+      "preset": "linkedin",
+      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
+    },
+    {
+      "preset": "draedr",
+      "name": "Draedr",
+      "url": "https://github.com/draedr",
       "invert": true
     },
     {
-      "preset": "default",
-      "url": "https://cdx.solo.to/images/link/icon.svg",
+      "preset": "twitter",
+      "name": "@azurelighting"
+      "url": "https://twitter.com/azurelighting",
       "invert": true
     },
     {
-      "preset": "default",
-      "url": "https://cdx.solo.to/images/link/icon.svg"
+      "preset": "steam",
+      "name": "felino-neptune"
+      "url": "https://steamcommunity.com/id/felino-neptune/"
     },
     {
-      "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
-    },
-    {
-      "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
-    },
-    {
-      "type": "section",
-      "title": "My Music"
-    },
-    {
-      "type": "embed",
-      "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/275777814&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-    },
-    {
-      "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
-    },
-    {
-      "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
-    },
-    {
-      "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
+      "preset": "mastodon",
+      "name": "@kettlevoid@koyu.space",
+      "url": "https://koyu.space/web/@kettlevoid"
     }
   ],
   "contacts": [
