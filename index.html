@@ -24,7 +24,7 @@ templateEngineOverride: njk
   </head>
   <body class="bg-gray-100 dark">
     <!-- Header -->
-    <div class="relative bg-red-100">
+    <div class="relative bg-{{app.theme.color}}-100" style="background-image: url({{app.theme.background}}); background-size: cover;">
       <!-- Spacers -->
       <div class="h-72"></div>
       <div
@@ -90,21 +90,23 @@ templateEngineOverride: njk
     <div
       class="block md:grid md:grid-cols-2 md:gap-4 container max-w-screen-md mx-auto mt-8"
     >
-      {% for group in app.links %}
-        {% for item in group %}
+      {% set colspan = true %}
+      {% for item in app.content %}
+
           {% if item.type == "embed" %}
           <!-- Embed Object-->
-            <iframe class="rounded col-span-2 mt-4" width="100%" src="{{item.url}}"></iframe>
+            <iframe class="rounded col-span-2 mt-4 shadow-2xl" width="100%" src="{{item.url}}"></iframe>
+            {% set colspan = true %}
           {% elif item.type == "section" %}
             <div class="col-span-2 mt-4 text-gray-700 text-2xl font-bold border-b-2 pb-4 border-gray-700">{{item.title}}</div>
+            {% set colspan = true %}
           {% else %}
           {% set mycolor %}{% if item.color %}{{ item.color }}{% elif item.preset %}{{ presets.links[item.preset].color }}{% else %}{{ app.theme.color}}{% endif %}{% endset %}
           
-
           <!-- Link Object -->
             <a
               href="#"
-              class="block group container max-w-screen mx-auto relative flex-row {{ 'col-span-2' if loop.first and (loop.length % 2 != 0) }}"
+              class="block group container max-w-screen mx-auto relative flex-row {{ 'col-span-2' if colspan }}"
             >
               <div class="flex-grow ml-8 bg-white p-4 rounded shadow-2xl">
                 <!-- Image -->
@@ -136,7 +138,7 @@ templateEngineOverride: njk
                 </div>
                 <!-- Content -->
                 <div class="block flex-grow ml-8">
-                  <div class="text-lg">LinkedIn</div>
+                  <div class="text-lg">LinkedIn {{colspan}}</div>
                   <div class="text-sm text-gray-400 font-light truncate">
                     {{item.url}}
                   </div>
@@ -160,8 +162,8 @@ templateEngineOverride: njk
                 </div>
               </div>
             </a>
+            {% set colspan = false %}
           {% endif %}
-        {% endfor %}
       {% endfor %}
 
     </div>
