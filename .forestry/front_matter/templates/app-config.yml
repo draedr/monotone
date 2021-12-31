@@ -32,6 +32,9 @@ fields:
   type: field_group
   config: {}
   fields:
+  - name: dark
+    type: boolean
+    label: dark
   - name: color
     type: text
     config:
