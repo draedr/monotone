@@ -97,6 +97,12 @@ fields:
       maxSize: 64
     label: image
     default: "/uploads/icon.svg"
+  - name: color
+    type: text
+    config:
+      required: false
+    label: color
+    default: gray
   config:
     min: 
     max: 
