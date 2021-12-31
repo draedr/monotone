@@ -17,3 +17,5 @@ fields:
     min: 
     max: 
   label: contacts
+pages:
+- config/presets.json
