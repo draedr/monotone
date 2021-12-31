@@ -27,3 +27,19 @@ fields:
   config:
     required: false
   label: repo
+- name: contacts
+  type: blocks
+  label: contacts
+  template_types:
+  - app-contacts
+  config:
+    min: 
+    max: 
+- name: content
+  type: blocks
+  label: content
+  template_types:
+  - app-links
+  config:
+    min: 
+    max: 
