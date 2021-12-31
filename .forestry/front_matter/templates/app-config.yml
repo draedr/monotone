@@ -43,3 +43,8 @@ fields:
   config:
     min: 
     max: 
+- name: theme
+  type: include
+  config: {}
+  template: theme
+  label: theme
