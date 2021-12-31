@@ -23,15 +23,17 @@
       "image": "/uploads/linkedin.svg",
       "color": "blue",
       "classes": "",
+      "darker": false,
       "type": "link"
     },
     {
       "name": "Draedr",
       "url": "https://github.com/draedr",
-      "invert": true,
+      "invert": false,
       "image": "/uploads/github.svg",
       "color": "slate",
       "classes": "",
+      "darker": false,
       "type": "link"
     },
     {
@@ -41,6 +43,7 @@
       "image": "/uploads/twitter.svg",
       "color": "blue",
       "classes": "",
+      "darker": false,
       "type": "link"
     },
     {
@@ -50,24 +53,27 @@
       "image": "/uploads/steam.svg",
       "color": "black",
       "classes": "",
+      "darker": false,
       "type": "link"
     },
     {
       "name": "Kettlevoid - Manuel#8215",
       "url": "https://discord.com/channels/@me",
-      "invert": false,
+      "invert": true,
       "image": "/uploads/logo-discord.svg",
       "color": "indigo",
       "type": "link",
-      "classes": ""
+      "darker": false,
+      "classes": "p-4"
     },
     {
       "name": "@kettlevoid@koyu.space",
       "url": "https://koyu.space/web/@kettlevoid",
-      "invert": false,
+      "invert": true,
       "image": "/uploads/logo-mastodon.svg",
-      "color": "slate",
-      "classes": "p-2",
+      "color": "indigo",
+      "darker": true,
+      "classes": "p-4",
       "type": "link"
     }
   ],
