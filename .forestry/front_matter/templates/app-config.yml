@@ -1,4 +1,29 @@
 ---
 label: App Config
 hide_body: true
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
+- name: location
+  type: text
+  config:
+    required: false
+  label: location
+- name: bio
+  type: text
+  config:
+    required: false
+  label: bio
+- name: avatar
+  type: text
+  config:
+    required: false
+  label: avatar
+- name: repo
+  type: text
+  config:
+    required: false
+  label: repo
