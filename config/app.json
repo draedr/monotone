@@ -18,8 +18,8 @@
   "content": [
     {
       "preset": "linkedin",
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
-      "name": "",
       "invert": false
     },
     {
