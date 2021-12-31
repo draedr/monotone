@@ -33,11 +33,6 @@ fields:
     config:
       required: false
     label: color
-  - name: id
-    type: text
-    config:
-      required: false
-    label: id
   config:
     min: 
     max: 
