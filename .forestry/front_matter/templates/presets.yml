@@ -10,12 +10,11 @@ fields:
     max: 
   label: contacts
 - name: links
-  type: blocks
-  label: links
-  template_types:
-  - presets-links
+  type: list
   config:
+    use_select: false
     min: 
     max: 
+  label: links
 pages:
 - config/presets.json
