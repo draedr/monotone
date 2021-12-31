@@ -1,6 +1,8 @@
 # mono.tone 
 **mono.tone** is a self-hostable clone of solo.to! 
 
+![Preview](./preview.png)
+
 Create with the [Eleventy](https://www.11ty.dev) as the static site generator, [Tailwind CSS](https://tailwindcss.com) for the style and prepared for use with the [Forestry.io](https://forestry.io) headless CMS!
 
 # Deploy mono.tone
