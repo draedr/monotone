@@ -135,6 +135,7 @@ templateEngineOverride: njk
                   	{% set image = presets.links[item.preset].image %}
                   {% else %}
                     {% set image = presets.links.default.image %}
+                  {% endif %}
                 {% else %}
                   {% set image = presets.links.default.image %}
                 {% endif %}
@@ -143,10 +144,14 @@ templateEngineOverride: njk
                 
                 {% endif %}
                 
-                {% if item.name %}
+                {% if item.name && item.name != "" %}
                   {% set name = item.name %}
                 {% elif item.preset %}
-                  {% set name = presets.links[item.preset].name %}
+                  {% if presets.links[item.preset].name != "" %}
+                  	{% set name = presets.links[item.preset].name %}
+                  {% else %}
+                    {% set name = item.url %}
+                  {% endif %}
                 {% else %}
                   {% set name = item.url %}
                 {% endif %}
