@@ -1,5 +1,6 @@
 ---
 templateEngineOverride: njk
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -127,12 +128,19 @@ templateEngineOverride: njk
 
                 
 
-                {% if item.image %}
+                {% if item.image and item.image != "" %}
                   {% set image = item.image %}
                 {% elif item.preset %}
-                  {% set image = presets.links[item.preset].image %}
+                  {% if presets.links[item.preset].image != "" %}
+                  	{% set image = presets.links[item.preset].image %}
+                  {% else %}
+                    {% set image = presets.links.default.image %}
                 {% else %}
                   {% set image = presets.links.default.image %}
+                {% endif %}
+                
+                {% if image == "" %}
+                
                 {% endif %}
                 
                 {% if item.name %}
