@@ -5,23 +5,19 @@ fields:
 - name: name
   type: text
   config:
-    required: false
+    required: true
   label: name
 - name: location
   type: text
   config:
-    required: false
+    required: true
   label: location
+  default: The Internet
 - name: bio
   type: text
   config:
-    required: false
+    required: true
   label: bio
-- name: avatar
-  type: text
-  config:
-    required: false
-  label: avatar
 - name: repo
   type: text
   config:
@@ -38,18 +34,21 @@ fields:
     - name: name
       type: boolean
       label: name
+      default: true
     - name: rounded
       type: boolean
       label: rounded
     - name: full
       type: boolean
       label: full
+      default: true
     label: contacts
   - name: color
     type: text
     config:
-      required: false
+      required: true
     label: color
+    default: blue
   - name: background
     type: text
     config:
@@ -58,9 +57,12 @@ fields:
   - name: repo
     type: boolean
     label: repo
+    default: true
   - name: footer
     type: boolean
     label: footer
+    default: true
+    hidden: false
   label: theme
 - name: content
   type: field_group_list
@@ -78,7 +80,7 @@ fields:
   - name: url
     type: text
     config:
-      required: false
+      required: true
     label: url
   - name: invert
     type: boolean
@@ -95,22 +97,28 @@ fields:
   - name: icon
     type: text
     config:
-      required: false
+      required: true
     label: icon
+    default: account-box
   - name: name
     type: text
     config:
-      required: false
+      required: true
     label: name
   - name: uri
     type: text
     config:
-      required: false
+      required: true
     label: uri
   config:
     min: 
     max: 
     labelField: name
   label: contacts
+- name: avatar
+  type: file
+  config:
+    maxSize: 64
+  label: avatar
 pages:
 - config/app.json
