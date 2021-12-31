@@ -10,9 +10,11 @@ fields:
     max: 
   label: contacts
 - name: links
-  type: text
-  config:
-    required: false
+  type: blocks
   label: links
+  template_types: []
+  config:
+    min: 
+    max: 
 pages:
 - config/presets.json
