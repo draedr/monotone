@@ -1,44 +1,26 @@
 {
-  "links": [
-    {
-      "linkedin": {
-        "image": "https://cdx.solo.to/images/link/linkedin.svg",
-        "description": "www.linkedin.com",
-        "name": "LinkedIn",
-        "color": "blue"
-      },
-      "github": {
-        "image": "https://cdx.solo.to/images/link/github.svg",
-        "description": "github.com",
-        "name": "Github",
-        "color": "black"
-      },
-      "twitter": {
-        "image": "https://cdx.solo.to/images/link/twitter.svg",
-        "description": "twitter.com",
-        "name": "Twitter",
-        "color": "blue"
-      },
-      "steam": {
-        "image": "https://cdx.solo.to/images/link/steam.svg",
-        "description": "steamcommunity.com",
-        "name": "Steam",
-        "color": "blue"
-      },
-      "mastodon": {
-        "image": "https://cdx.solo.to/images/link/icon.svg",
-        "name": "Mastodon",
-        "color": "slate"
-      },
-      "default": {
-        "image": "https://cdx.solo.to/images/link/icon.svg",
-        "description": "",
-        "color": "red",
-        "invert": true
-      }
-    }
-  ],
-  "contacts": [
-
-  ]
+    "colors": [
+        "slate",
+        "gray",
+        "zinc",
+        "neutral",
+        "stone",
+        "red",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "green",
+        "emerald",
+        "teal",
+        "cyan",
+        "sky",
+        "blue",
+        "indigo",
+        "violet",
+        "purple",
+        "fuchsia",
+        "pink",
+        "rose"
+    ]
 }
