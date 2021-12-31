@@ -103,6 +103,11 @@ fields:
       required: false
     label: color
     default: gray
+  - name: classes
+    type: text
+    config:
+      required: false
+    label: classes
   config:
     min: 
     max: 
