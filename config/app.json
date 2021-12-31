@@ -21,35 +21,40 @@
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
       "invert": false,
-      "image": "/uploads/linkedin.svg"
+      "image": "/uploads/linkedin.svg",
+      "color": ""
     },
     {
       "preset": "github",
       "name": "Draedr",
       "url": "https://github.com/draedr",
       "invert": true,
-      "image": "/uploads/github.svg"
+      "image": "/uploads/github.svg",
+      "color": ""
     },
     {
       "preset": "twitter",
       "name": "@azurelighting",
       "url": "https://twitter.com/azurelighting",
-      "invert": true,
-      "image": "/uploads/twitter.svg"
+      "invert": false,
+      "image": "/uploads/twitter.svg",
+      "color": ""
     },
     {
       "preset": "steam",
       "name": "felino-neptune",
       "url": "https://steamcommunity.com/id/felino-neptune/",
       "invert": false,
-      "image": "/uploads/steam.svg"
+      "image": "/uploads/steam.svg",
+      "color": ""
     },
     {
       "preset": "mastodon",
       "name": "@kettlevoid@koyu.space",
       "url": "https://koyu.space/web/@kettlevoid",
       "invert": false,
-      "image": "/uploads/logo-mastodon.svg"
+      "image": "/uploads/logo-mastodon.svg",
+      "color": "slate"
     }
   ],
   "contacts": [
