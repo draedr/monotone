@@ -105,7 +105,7 @@ fields:
     label: classes
   - name: type
     type: select
-    default: []
+    default: link
     config:
       required: false
       options:
