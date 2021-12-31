@@ -165,7 +165,7 @@ templateEngineOverride: njk
                 {% endif %}
 
                 <div
-                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 rounded shadow-2xl shadow-{{mycolor}}-500 bg-{{mycolor}}-400"
+                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 rounded shadow-2xl shadow-{{mycolor}}-500 bg-{{mycolor}}-400 {{item.classes}}"
                 >
                   <img src="{{image}}" class="{{'invert' if invert}}">
                 </div>
