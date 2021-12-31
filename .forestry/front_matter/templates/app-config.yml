@@ -202,7 +202,7 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-  label: custom_content
+  label: customcontent
   description: Can be used to add scripts to the end of the page, like tracking. For
     open-source analytics, we suggests you to try Plausible or Matomo.
 pages:
