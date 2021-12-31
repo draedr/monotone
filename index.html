@@ -9,7 +9,7 @@ templateEngineOverride: njk
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
-    <title>mono.to</title>
+    <title>{{ app.name }} - mono.tone</title>
 
     <!-- import the webpage's stylesheet -->
     <style>
@@ -20,11 +20,13 @@ templateEngineOverride: njk
 
     <!-- import tailwind from PlayCDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    {% if app.theme.dark %}
     <script>
       tailwind.config = {
         darkMode: 'class'
       }
     </script>
+    {% endif %}
     <!-- import MDI's Webfont -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
   </head>
@@ -83,26 +85,25 @@ templateEngineOverride: njk
 
             {% for this in app.contacts %}
 
-              {% if this.color %}
-                {% set contact_color = this.color %}
-              {% else %}
-                {% set contact_color = app.theme.color %}
-              {% endif %}
-
               {% if app.theme.dark %}
                 {% set contact_bg = "zinc-800" %}
                 {% set contact_hover = "zinc-900" %}
               {% else %}
-                {% set contact_bg = contact_bg + "-100" %}
-                {% set contact_hover = contact_bg + "-200" %}
+                {% set contact_bg = app.theme.color + "-100" %}
+                {% set contact_hover = app.theme.color + "-200" %}
               {% endif %}
 
+              {% if this.color %}
+            	{% set icon_color = this.color %}
+              {% else %}
+                {% set icon_color = app.theme.color %}
+              {% endif %}
               <a
                 href="{{this.uri}}"
                 rel="me"
                 class="text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded else 'rounded' }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
               >
-                <span class="mdi mdi-{{this.icon}} text-{{contact_color}}-500 text-xl"></span>
+                <span class="mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
                 {% if app.theme.contacts.name %}
                   <span class="">{{@index}}{{this.name}}</span>
                 {% endif %}
