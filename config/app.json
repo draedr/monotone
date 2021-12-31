@@ -23,7 +23,8 @@
       "invert": false,
       "image": "/uploads/linkedin.svg",
       "color": "",
-      "classes": ""
+      "classes": "",
+      "type": ""
     },
     {
       "preset": "github",
@@ -31,8 +32,9 @@
       "url": "https://github.com/draedr",
       "invert": true,
       "image": "/uploads/github.svg",
-      "color": "",
-      "classes": ""
+      "color": "slate",
+      "classes": "",
+      "type": ""
     },
     {
       "preset": "twitter",
@@ -41,7 +43,8 @@
       "invert": false,
       "image": "/uploads/twitter.svg",
       "color": "",
-      "classes": ""
+      "classes": "",
+      "type": ""
     },
     {
       "preset": "steam",
@@ -50,6 +53,16 @@
       "invert": false,
       "image": "/uploads/steam.svg",
       "color": "",
+      "classes": "",
+      "type": ""
+    },
+    {
+      "name": "Kettlevoid - Manuel#8215",
+      "url": "https://discord.com/channels/@me",
+      "invert": false,
+      "image": "/uploads/logo-discord.svg",
+      "color": "indigo",
+      "type": "link",
       "classes": ""
     },
     {
@@ -59,7 +72,8 @@
       "invert": false,
       "image": "/uploads/logo-mastodon.svg",
       "color": "slate",
-      "classes": "p-2"
+      "classes": "p-2",
+      "type": ""
     }
   ],
   "contacts": [
