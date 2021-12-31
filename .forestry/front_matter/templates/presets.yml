@@ -10,33 +10,9 @@ fields:
     max: 
   label: contacts
 - name: links
-  type: field_group_list
-  fields:
-  - name: image
-    type: text
-    config:
-      required: false
-    label: image
-  - name: description
-    type: text
-    config:
-      required: false
-    label: description
-    default: ''
-  - name: name
-    type: text
-    config:
-      required: false
-    label: name
-  - name: color
-    type: text
-    config:
-      required: false
-    label: color
-  config:
-    min: 
-    max: 
-    labelField: id
+  type: include
+  config: {}
+  template: presets-links
   label: links
 pages:
 - config/presets.json
