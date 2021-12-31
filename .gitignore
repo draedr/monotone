@@ -105,3 +105,6 @@ dist
 
 # Eleventy
 build
+
+# NPM
+package-lock.json
