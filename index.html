@@ -116,7 +116,6 @@ templateEngineOverride: njk
             <div class="col-span-2 mt-4 text-gray-700 text-2xl font-bold border-b-2 pb-4 border-gray-700">{{item.name}}</div>
             {% set colspan = true %}
           {% else %}
-          {% set mycolor %}{% if item.color %}{{ item.color }}{% elif item.preset %}{{ presets.links[item.preset].color }}{% else %}{{ app.theme.color}}{% endif %}{% endset %}
           
           <!-- Link Object -->
             <a
@@ -125,49 +124,34 @@ templateEngineOverride: njk
             >
               <div class="flex-grow ml-8 bg-white p-4 rounded shadow-2xl">
                 <!-- Image -->
-
                 
-
-                {% if item.image and item.image != "" %}
-                  {% set image = item.image %}
-                {% elif item.preset %}
-                  {% if presets.links[item.preset].image != "" %}
-                  	{% set image = presets.links[item.preset].image %}
-                  {% else %}
-                    {% set image = presets.links.default.image %}
-                  {% endif %}
-                {% else %}
-                  {% set image = presets.links.default.image %}
-                {% endif %}
-                
-                {% if item.name and item.name != "" %}
-                  {% set name = item.name %}
-                {% elif item.preset %}
-                  {% if presets.links[item.preset].name != "" %}
-                  	{% set name = presets.links[item.preset].name %}
-                  {% else %}
-                    {% set name = item.url %}
-                  {% endif %}
-                {% else %}
+                {% if (not item.name) or item.name == "" %}
                   {% set name = item.url %}
-                {% endif %}
-                
-                {% if item.invert %}
-                  {% set invert = true %}
-                {% elif item.preset %}
-                  {% if presets.links[item.preset].invert %}
-                    {% set invert = presets.links[item.preset].invert %}
-                  {% else %}
-                    {% set invert = false %}
-                  {% endif %}
                 {% else %}
-                  {% set invert = false %}
+                  {% set name = item.name %}
+                {% endif %}
+
+                {% if item.color == "black" %}
+                  {% set item_bg = "bg-black" %}
+                  {% set item_shadow = "shadow-black" %}
+                {% elif item.color == "white" %}
+                  {% set item_bg = "bg-white" %}
+                  {% set item_shadow = "shadow-white" %}
+                {% else %}
+                  {% set item_bg = "bg-" + item.color %}
+                  {% set item_shadow = "shadow-" + item.color + "-500" %}
+                {% endif %}
+
+                {% if item.darker %}
+                  {% set item_bg = item_bg + "-800" %}
+                {% else %}
+                  {% set item_bg = item_bg + "-400" %}
                 {% endif %}
 
                 <div
-                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 rounded shadow-2xl shadow-{{mycolor}}-500 bg-{{mycolor}}-400 {{item.classes}}"
+                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 rounded shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}"
                 >
-                  <img src="{{image}}" class="{{'invert' if invert}}">
+                  <img src="{{item.image}}" class="{{'invert' if item.invert}}">
                 </div>
                 <!-- Content -->
                 <div class="block flex-grow ml-8">
