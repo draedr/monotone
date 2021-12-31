@@ -1,5 +1,5 @@
 ---
-label: theme
+label: App Theme
 hide_body: true
 fields:
 - name: color
@@ -18,3 +18,8 @@ fields:
 - name: footer
   type: boolean
   label: footer
+- name: contacts
+  type: include
+  config: {}
+  template: app-theme-contacts
+  label: contacts
