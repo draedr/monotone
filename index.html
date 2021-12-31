@@ -101,7 +101,7 @@ templateEngineOverride: njk
               <a
                 href="{{this.uri}}"
                 rel="me"
-                class="text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded else 'rounded' }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
+                class="text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
               >
                 <span class="mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
                 {% if app.theme.contacts.name %}
