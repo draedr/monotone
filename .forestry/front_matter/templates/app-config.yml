@@ -48,9 +48,9 @@ fields:
       title="TailwindCSS" target="_blank">https://tailwindcss.com/docs/customizing-colors#default-color-palette</a>
       for a preview of the colors.
   - name: background
-    type: text
+    type: file
     config:
-      required: false
+      maxSize: 64
     label: background
   - name: contacts
     type: field_group
