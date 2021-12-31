@@ -27,23 +27,6 @@ fields:
   config:
     required: false
   label: repo
-- name: contacts
-  type: blocks
-  label: contacts
-  template_types:
-  - app-contacts
-  config:
-    min: 
-    max: 
-- name: content
-  type: blocks
-  label: content
-  template_types:
-  - app-links
-  - app-content-preset
-  config:
-    min: 
-    max: 
 - name: theme
   type: field_group
   config: {}
@@ -79,3 +62,53 @@ fields:
     type: boolean
     label: footer
   label: theme
+- name: content
+  type: field_group_list
+  fields:
+  - name: preset
+    type: text
+    config:
+      required: false
+    label: preset
+  - name: name
+    type: text
+    config:
+      required: false
+    label: name
+  - name: url
+    type: text
+    config:
+      required: false
+    label: url
+  - name: invert
+    type: boolean
+    label: invert
+    default: false
+  config:
+    min: 
+    max: 
+    labelField: url
+  label: content
+- name: contacts
+  type: field_group_list
+  fields:
+  - name: icon
+    type: text
+    config:
+      required: false
+    label: icon
+  - name: name
+    type: text
+    config:
+      required: false
+    label: name
+  - name: uri
+    type: text
+    config:
+      required: false
+    label: uri
+  config:
+    min: 
+    max: 
+    labelField: name
+  label: contacts
