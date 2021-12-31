@@ -8,9 +8,6 @@ sections:
   path: index.html
   label: Template
 - type: document
-  path: config/presets.json
-  label: Presets
-- type: document
   path: config/app.json
   label: Config
 upload_dir: uploads
