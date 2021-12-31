@@ -1,49 +1,27 @@
-# monotone
-monotone is a solo.to clone made with eleventy and tailwindcss.
-It doesn't use javascript, and can be managed completely by modifying the config json via an headless cms like forestry!
+# mono.tone 
+**mono.tone** is a self-hostable clone of solo.to! 
 
-## Settings
+Create with the [Eleventy](https://www.11ty.dev) as the static site generator, [Tailwind CSS](https://tailwindcss.com) for the style and prepared for use with the [Forestry.io](https://forestry.io) headless CMS!
 
-### `app.json`
+
+
+# Deploy mono.tone
+
+To deploy mono.tone, you just need to fork it and deploy it on any serverless host, like [Netlify](https://www.netlify.com) or [Vercel](https://vercel.com)!
+Or you can just press the green "Deploy" button down here to directly deploy to netlify!
+
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/draedr/monotone)
+
+# Manage mono.tone
+You can manage your mono.tone page with Forestry.io! To do so, you just have to:
+
+1. Go to [Forestry.io](https://forestry.io)
+2. Click on "Import your Site Now" and select your fork of mono.tone! (In case you used the deploy button, it's the one created there)
+3. Select "Config" in the sidebar and change your mono.tone settings! 
+
+## Get a better URL on Netlify
 ---
-
-> `name`: Your name!
->
-> `location`: Your address
->
-> `bio`: Your bio
->
-> `theme`: something
->   > `color`: Color to use for icons and default backgrounds
->   >
->   > `background`: Background image for the header
->   >
->   > `footer`: Should the footer be displayed?
->   >
-> `content`: A list of links
->
-> `contacts`: A list of contacts
->
-
-### `links`
----
-> `content`: A list of objects
->   > `url`: The url of the link, required
->   >
->   > `invert`: Should the image' colors be inverted? defaults to 'false'
->   >
->   > `preset`: A preset from presets.json, defaults to 'default'
->   >
->   > `type`: The type of content. EIther section, embed or link. Defaults to link
->   > 
->   > `title`: Title of the section. defaults to none
->   >
-
-### `contacts`
----
-> `contacts`: A list of objects
->   > `icon`: The icon to use. required
->   >
->   > `name`: The name to show. required
->   >
->   > `uri`: The uri to link, comprising of protocol
+To have your username (or really anything) as a URL on netlify, you just need to:
+1. Go to your site on netlify's dashboard
+2. Click on "Domain Settings"
+3. Next to your domain name, press "Options" and then "Edit"
