@@ -5,7 +5,7 @@
   "avatar": "/uploads/download20210405190812.jpg",
   "repo": "https://github.com/draedr/monotone",
   "theme": {
-    "dark": "false",
+    "dark": true,
     "color": "blue",
     "background": "/uploads/jacky-zeng-tqsfdwxryq4-unsplash.jpg",
     "contacts": {
@@ -14,7 +14,8 @@
       "full": true
     },
     "repo": true,
-    "footer": true
+    "footer": true,
+    "favicon": "/uploads/at.svg"
   },
   "content": [
     {
