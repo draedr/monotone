@@ -140,7 +140,7 @@ templateEngineOverride: njk
                   {% set image = presets.links.default.image %}
                 {% endif %}
                 
-                {% if item.name && item.name != "" %}
+                {% if (item.name) && (item.name != "") %}
                   {% set name = item.name %}
                 {% elif item.preset %}
                   {% if presets.links[item.preset].name != "" %}
