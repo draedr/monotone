@@ -20,31 +20,36 @@
       "preset": "linkedin",
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
-      "invert": false
+      "invert": false,
+      "image": "/uploads/linkedin.svg"
     },
     {
       "preset": "github",
       "name": "Draedr",
       "url": "https://github.com/draedr",
-      "invert": true
+      "invert": true,
+      "image": "/uploads/github.svg"
     },
     {
       "preset": "twitter",
       "name": "@azurelighting",
       "url": "https://twitter.com/azurelighting",
-      "invert": true
+      "invert": true,
+      "image": "/uploads/twitter.svg"
     },
     {
       "preset": "steam",
       "name": "felino-neptune",
       "url": "https://steamcommunity.com/id/felino-neptune/",
-      "invert": false
+      "invert": false,
+      "image": "/uploads/steam.svg"
     },
     {
       "preset": "mastodon",
       "name": "@kettlevoid@koyu.space",
       "url": "https://koyu.space/web/@kettlevoid",
-      "invert": false
+      "invert": false,
+      "image": "/uploads/logo-mastodon.svg"
     }
   ],
   "contacts": [
