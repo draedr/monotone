@@ -18,7 +18,9 @@
   "content": [
     {
       "preset": "linkedin",
-      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/"
+      "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
+      "name": "",
+      "invert": false
     },
     {
       "preset": "github",
@@ -35,12 +37,14 @@
     {
       "preset": "steam",
       "name": "felino-neptune",
-      "url": "https://steamcommunity.com/id/felino-neptune/"
+      "url": "https://steamcommunity.com/id/felino-neptune/",
+      "invert": false
     },
     {
       "preset": "mastodon",
       "name": "@kettlevoid@koyu.space",
-      "url": "https://koyu.space/web/@kettlevoid"
+      "url": "https://koyu.space/web/@kettlevoid",
+      "invert": false
     }
   ],
   "contacts": [

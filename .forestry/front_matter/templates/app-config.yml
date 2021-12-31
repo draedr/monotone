@@ -112,3 +112,5 @@ fields:
     max: 
     labelField: name
   label: contacts
+pages:
+- config/app.json
