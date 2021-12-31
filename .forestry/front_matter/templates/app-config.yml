@@ -185,5 +185,25 @@ fields:
     max: 
     labelField: name
   label: contacts
+- name: custom_css
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: custom css
+- name: custom_content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: custom_content
+  description: Can be used to add scripts to the end of the page, like tracking. For
+    open-source analytics, we suggests you to try Plausible or Matomo.
 pages:
 - config/app.json
