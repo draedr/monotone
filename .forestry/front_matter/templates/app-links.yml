@@ -1,4 +1,29 @@
 ---
 label: App Links
 hide_body: true
-fields: []
+fields:
+- name: preset
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: 
+      file: config/presets.json
+      path: links
+  label: preset
+- name: url
+  type: text
+  config:
+    required: false
+  label: url
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
+- name: invert
+  type: boolean
+  label: invert
