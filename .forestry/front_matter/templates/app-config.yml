@@ -18,6 +18,11 @@ fields:
   config:
     required: true
   label: bio
+- name: avatar
+  type: file
+  config:
+    maxSize: 64
+  label: avatar
 - name: repo
   type: text
   config:
@@ -115,10 +120,5 @@ fields:
     max: 
     labelField: name
   label: contacts
-- name: avatar
-  type: file
-  config:
-    maxSize: 64
-  label: avatar
 pages:
 - config/app.json
