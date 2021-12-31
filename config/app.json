@@ -5,6 +5,7 @@
   "avatar": "/uploads/download20210405190812.jpg",
   "repo": "https://github.com/draedr/monotone",
   "theme": {
+    "dark": "false",
     "color": "blue",
     "background": "/uploads/jacky-zeng-tqsfdwxryq4-unsplash.jpg",
     "contacts": {
@@ -71,7 +72,7 @@
       "url": "https://koyu.space/web/@kettlevoid",
       "invert": true,
       "image": "/uploads/logo-mastodon.svg",
-      "color": "indigo",
+      "color": "sky",
       "darker": true,
       "classes": "p-4",
       "type": "link"

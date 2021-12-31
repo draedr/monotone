@@ -3,7 +3,7 @@ templateEngineOverride: njk
 
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="{{ 'dark' if app.theme.dark }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,21 +20,26 @@ templateEngineOverride: njk
 
     <!-- import tailwind from PlayCDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class'
+      }
+    </script>
     <!-- import MDI's Webfont -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
   </head>
-  <body class="bg-gray-100 dark">
+  <body class="bg-gray-100 dark:bg-neutral-800">
     <!-- Header -->
     <div class="relative bg-{{app.theme.color}}-100" style="background-image: url({{app.theme.background}}); background-size: cover;">
       <!-- Spacers -->
       <div class="h-72"></div>
       <div
-        class="h-72 bg-gray-100"
+        class="h-72 bg-gray-100 dark:bg-neutral-800"
         style="clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);"
       ></div>
       <!-- Card -->
       <div
-        class="absolute container max-w-screen-md bottom-8 left-0 right-0 mx-auto rounded md:shadow-2xl bg-gray-100 dark:bg-slate-700 md:bg-white p-4"
+        class="absolute container max-w-screen-md bottom-8 left-0 right-0 mx-auto rounded md:shadow-2xl bg-gray-100 dark:bg-neutral-800 dark:bg-neutral-700 md:bg-white p-4"
       >
         <!-- Avatar -->
         <img
@@ -46,7 +51,7 @@ templateEngineOverride: njk
         <!-- Card Content -->
         <div class="flex flex-col mx-auto items-center gap-3">
           <!-- Name -->
-          <div class="text-3xl font-semibold">
+          <div class="text-3xl font-semibold text-black dark:text-white ">
             {{app.name}}
           </div>
           <!-- Location -->
@@ -69,7 +74,7 @@ templateEngineOverride: njk
           {% endif %}
           <!-- Biography -->
           {% if app.location %}
-            <div class="max-w-xs text-md text-center">
+            <div class="max-w-xs text-md text-center text-black dark:text-white ">
               {{app.bio}}
             </div>
           {% endif %}
@@ -84,10 +89,18 @@ templateEngineOverride: njk
                 {% set contact_color = app.theme.color %}
               {% endif %}
 
+              {% if app.theme.dark %}
+                {% set contact_bg = "zinc-800" %}
+                {% set contact_hover = "zinc-900" %}
+              {% else %}
+                {% set contact_bg = contact_bg + "-100" %}
+                {% set contact_hover = contact_bg + "-200" %}
+              {% endif %}
+
               <a
                 href="{{this.uri}}"
                 rel="me"
-                class="{{ 'bg-' + contact_color + '-100 hover:bg-' + contact_color + '-200' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded else 'rounded' }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
+                class="text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded else 'rounded' }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
               >
                 <span class="mdi mdi-{{this.icon}} text-{{contact_color}}-500 text-xl"></span>
                 {% if app.theme.contacts.name %}
@@ -122,7 +135,7 @@ templateEngineOverride: njk
               href="{{item.url}}"
               class="block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row {{ 'col-span-2' if colspan }}"
             >
-              <div class="flex-grow ml-8 bg-white p-4 rounded shadow-2xl">
+              <div class="flex-grow ml-8 bg-white dark:bg-neutral-700  p-4 rounded shadow-2xl">
                 <!-- Image -->
                 
                 {% if (not item.name) or item.name == "" %}
@@ -149,13 +162,13 @@ templateEngineOverride: njk
                 {% endif %}
 
                 <div
-                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 rounded shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}"
+                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}"
                 >
                   <img src="{{item.image}}" class="{{'invert' if item.invert}}">
                 </div>
                 <!-- Content -->
                 <div class="block flex-grow ml-8">
-                  <div class="text-lg">{{name}}</div>
+                  <div class="text-lg dark:text-white text-black">{{name}}</div>
                   <div class="text-sm text-gray-400 font-light truncate">
                     {{item.url}}
                   </div>
