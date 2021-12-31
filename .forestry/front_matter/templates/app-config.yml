@@ -72,11 +72,6 @@ fields:
 - name: content
   type: field_group_list
   fields:
-  - name: preset
-    type: text
-    config:
-      required: false
-    label: preset
   - name: name
     type: text
     config:
@@ -108,6 +103,21 @@ fields:
     config:
       required: false
     label: classes
+  - name: type
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - link
+      - embed
+      - section
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: type
   config:
     min: 
     max: 
