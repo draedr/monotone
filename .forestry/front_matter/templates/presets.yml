@@ -1,4 +1,19 @@
 ---
 label: Presets
 hide_body: true
-fields: []
+fields:
+- name: links
+  type: blocks
+  label: links
+  template_types:
+  - presets-links
+  config:
+    min: 
+    max: 
+- name: contacts
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: contacts
