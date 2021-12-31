@@ -40,6 +40,7 @@ fields:
   label: content
   template_types:
   - app-links
+  - app-content-preset
   config:
     min: 
     max: 
