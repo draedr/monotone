@@ -30,6 +30,7 @@ templateEngineOverride: njk
     <!-- import MDI's Webfont -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
   </head>
+  <style>{{app.custom_css}}</style>
   <body class="bg-gray-100 dark:bg-neutral-800">
     <!-- Header -->
     <div class="relative bg-{{app.theme.color}}-100" style="background-image: url({{app.theme.background}}); background-size: cover;">
@@ -216,5 +217,7 @@ templateEngineOverride: njk
         {% endif %}
       </div>
     {% endif %}
+    
+    {{app.custom_content}}
   </body>
 </html>
