@@ -28,6 +28,7 @@ fields:
   config:
     required: false
   label: repo
+  description: URL to the git repository.
 - name: theme
   type: field_group
   config: {}
@@ -35,12 +36,17 @@ fields:
   - name: dark
     type: boolean
     label: dark
+    description: Use dark theme instead of light theme.
   - name: color
     type: text
     config:
       required: true
     label: color
     default: blue
+    description: Color to use for contacts backgrounds (on light theme) and footer
+      icons. See <a href="https://tailwindcss.com/docs/customizing-colors#default-color-palette"
+      title="TailwindCSS" target="_blank">https://tailwindcss.com/docs/customizing-colors#default-color-palette</a>
+      for a preview of the colors.
   - name: background
     type: text
     config:
@@ -54,23 +60,29 @@ fields:
       type: boolean
       label: name
       default: true
+      description: Show the contact's name.
     - name: rounded
       type: boolean
       label: rounded
+      description: Makes the contact a pill if the name is shown, or a circle if it's
+        not.
     - name: full
       type: boolean
       label: full
       default: true
+      description: Show a background instead of a border.
     label: contacts
   - name: repo
     type: boolean
     label: repo
     default: true
+    description: Show the icon/link to the repository inside the footer.
   - name: footer
     type: boolean
     label: footer
     default: true
     hidden: false
+    description: Show the footer.
   label: theme
 - name: content
   type: field_group_list
@@ -80,6 +92,7 @@ fields:
     config:
       required: false
     label: name
+    description: The link name or the section's title. <br>Not used for embeds.
   - name: url
     type: text
     config:
@@ -89,6 +102,7 @@ fields:
     type: boolean
     label: invert
     default: false
+    description: Invert the colors of the uploaded image (Useful for SVG images).
   - name: darker
     type: boolean
     label: darker
@@ -105,11 +119,17 @@ fields:
       required: false
     label: color
     default: gray
+    description: Color to use for contacts backgrounds (on light theme) and footer
+      icons. See <a href="https://tailwindcss.com/docs/customizing-colors#default-color-palette"
+      title="https://tailwindcss.com/docs/customizing-colors#default-color-palette"
+      target="_blank">https://tailwindcss.com/docs/customizing-colors#default-color-palette</a>
+      for a preview of the colors.
   - name: classes
     type: text
     config:
       required: false
     label: classes
+    description: Additional tailwind classes to apply to the link's image.
   - name: type
     type: select
     default: link
@@ -139,6 +159,9 @@ fields:
       required: true
     label: icon
     default: account-box
+    description: The contact' icon. See <a href="https://materialdesignicons.com/"
+      title="https://materialdesignicons.com/" target="_blank">https://materialdesignicons.com/</a>
+      for a list of all the icons.
   - name: name
     type: text
     config:
@@ -149,6 +172,8 @@ fields:
     config:
       required: true
     label: uri
+    description: The url to the contact, with relative protocol (like "mailto:" for
+      emails or "tel:" for telephone numbers).
   config:
     min: 
     max: 
