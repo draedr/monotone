@@ -1,4 +1,21 @@
 ---
 label: App Content Preset
 hide_body: true
-fields: []
+fields:
+- name: preset
+  type: select
+  default: ''
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: presets-0412a948-e170-49a8-a296-465c3fa6de08
+      file: config/presets.json
+      path: links
+  label: preset
+- name: url
+  type: text
+  config:
+    required: false
+  label: url
