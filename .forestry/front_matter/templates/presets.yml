@@ -2,14 +2,6 @@
 label: Presets
 hide_body: true
 fields:
-- name: links
-  type: blocks
-  label: links
-  template_types:
-  - presets-links
-  config:
-    min: 
-    max: 
 - name: contacts
   type: list
   config:
@@ -17,5 +9,39 @@ fields:
     min: 
     max: 
   label: contacts
+- name: links
+  type: field_group_list
+  fields:
+  - name: image
+    type: text
+    config:
+      required: false
+    label: image
+  - name: description
+    type: text
+    config:
+      required: false
+    label: description
+    default: ''
+  - name: name
+    type: text
+    config:
+      required: false
+    label: name
+  - name: color
+    type: text
+    config:
+      required: false
+    label: color
+  - name: id
+    type: text
+    config:
+      required: false
+    label: id
+  config:
+    min: 
+    max: 
+    labelField: id
+  label: links
 pages:
 - config/presets.json
