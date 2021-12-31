@@ -22,7 +22,8 @@
       "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
       "invert": false,
       "image": "/uploads/linkedin.svg",
-      "color": ""
+      "color": "",
+      "classes": ""
     },
     {
       "preset": "github",
@@ -30,7 +31,8 @@
       "url": "https://github.com/draedr",
       "invert": true,
       "image": "/uploads/github.svg",
-      "color": ""
+      "color": "",
+      "classes": ""
     },
     {
       "preset": "twitter",
@@ -38,7 +40,8 @@
       "url": "https://twitter.com/azurelighting",
       "invert": false,
       "image": "/uploads/twitter.svg",
-      "color": ""
+      "color": "",
+      "classes": ""
     },
     {
       "preset": "steam",
@@ -46,7 +49,8 @@
       "url": "https://steamcommunity.com/id/felino-neptune/",
       "invert": false,
       "image": "/uploads/steam.svg",
-      "color": ""
+      "color": "",
+      "classes": ""
     },
     {
       "preset": "mastodon",
@@ -54,7 +58,8 @@
       "url": "https://koyu.space/web/@kettlevoid",
       "invert": false,
       "image": "/uploads/logo-mastodon.svg",
-      "color": "slate"
+      "color": "slate",
+      "classes": "p-2"
     }
   ],
   "contacts": [
