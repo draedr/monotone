@@ -233,8 +233,11 @@ templateEngineOverride: njk
             <div class="flex-grow ml-8 bg-white dark:bg-neutral-700  p-4 rounded shadow-2xl">
               <!-- Image -->
 
-              {% if (not item.name) 
-                or item.name == "" %}
+              {% set name %}
+                {{item.name}}
+              {% endset %}
+
+              {% if item.name == "" %}
                 {% set name = item.url %}
               {% else %}
                 {% set name = item.name %}
