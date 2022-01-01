@@ -242,6 +242,16 @@ templateEngineOverride: njk
               {% else %}
                 {% set name = item.name %}
               {% endif %}
+              
+              {% set item_content %}
+                {{item.content}}
+              {% endset %}
+
+              {% if item.content == "" %}
+                {% set item_content = item.url %}
+              {% else %}
+                {% set item_content = item.content %}
+              {% endif %}
 
               {% if item.color == "black" %}
                 {% set item_bg = "bg-black" %}
@@ -258,12 +268,6 @@ templateEngineOverride: njk
                 {% set item_bg = item_bg + "-800" %}
               {% else %}
                 {% set item_bg = item_bg + "-400" %}
-              {% endif %}
-
-              {% if item.content == "" %}
-                {% set item_content = item.content %}
-              {% else %}
-                {% set item_content = item.url %}
               {% endif %}
 
               <div
