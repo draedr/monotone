@@ -166,6 +166,7 @@ fields:
       - link
       - embed
       - section
+      - content
       source:
         type: simple
         section: 
