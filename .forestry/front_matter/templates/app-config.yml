@@ -75,7 +75,8 @@ fields:
       type: boolean
       label: all-same
       default: true
-      description: Shows all the contact the same way, instead of showing the first bigger when having more than 3.
+      description: Shows all the contact the same way, instead of showing the first
+        bigger when having more than 3.
     - name: full
       type: boolean
       label: full
@@ -205,7 +206,7 @@ fields:
     config:
       maxSize: 64
     label: image
-    default: ""
+    default: ''
   label: contacts
 - name: custom_css
   type: textarea
