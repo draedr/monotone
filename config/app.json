@@ -39,7 +39,8 @@
       "color": "blue",
       "classes": "",
       "darker": false,
-      "type": "link"
+      "type": "link",
+      "content": ""
     },
     {
       "name": "Draedr",
@@ -49,7 +50,8 @@
       "color": "slate",
       "classes": "",
       "darker": false,
-      "type": "link"
+      "type": "link",
+      "content": ""
     },
     {
       "name": "@kettlevoid@koyu.space",
@@ -59,7 +61,8 @@
       "color": "sky",
       "darker": true,
       "classes": "p-4",
-      "type": "link"
+      "type": "link",
+      "content": ""
     },
     {
       "name": "Personal",
@@ -69,7 +72,8 @@
       "color": "slate",
       "classes": "",
       "darker": false,
-      "type": "section"
+      "type": "section",
+      "content": ""
     },
     {
       "name": "@azurelighting",
@@ -79,7 +83,8 @@
       "color": "blue",
       "classes": "",
       "darker": false,
-      "type": "link"
+      "type": "link",
+      "content": ""
     },
     {
       "name": "felino-neptune",
@@ -89,7 +94,8 @@
       "color": "black",
       "classes": "",
       "darker": false,
-      "type": "link"
+      "type": "link",
+      "content": ""
     },
     {
       "name": "Kettlevoid - Manuel#8215",
@@ -99,7 +105,8 @@
       "color": "indigo",
       "type": "link",
       "darker": false,
-      "classes": "p-4"
+      "classes": "p-4",
+      "content": ""
     }
   ],
   "contacts": [
@@ -119,7 +126,7 @@
       "icon": "email",
       "name": "Email",
       "uri": "mailto:mtondelli1420@gmail.com",
-      "image": "https://materialdesignicons.com/api/download/icon/svg/14AAE073-8399-4D67-9F7E-8E9424328681"
+      "image": "/uploads/email.svg"
     }
   ],
   "custom_css": "",
