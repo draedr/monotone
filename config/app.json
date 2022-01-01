@@ -5,19 +5,32 @@
   "avatar": "/uploads/download20210405190812.jpg",
   "repo": "https://github.com/draedr/monotone",
   "theme": {
-    "dark": true,
+    "dark": false,
+    "skew": true,
     "color": "blue",
     "background": "/uploads/jacky-zeng-tqsfdwxryq4-unsplash.jpg",
     "contacts": {
       "name": true,
       "rounded": false,
-      "full": true
+      "full": true,
+      "allsame": false
     },
     "repo": true,
     "footer": true,
     "favicon": "/uploads/at.svg"
   },
   "content": [
+    {
+      "name": "This page is made with mono.tone",
+      "content": "mono.tone is a self-hostable clone of solo.to, open-source and made by me!",
+      "url": "https://github.com/draedr/monotone/",
+      "invert": false,
+      "image": "/uploads/github.svg",
+      "color": "slate",
+      "type": "content",
+      "darker": false,
+      "classes": ""
+    },
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/manuel-tondelli-5a7696185/",
@@ -36,6 +49,16 @@
       "color": "slate",
       "classes": "",
       "darker": false,
+      "type": "link"
+    },
+    {
+      "name": "@kettlevoid@koyu.space",
+      "url": "https://koyu.space/web/@kettlevoid",
+      "invert": true,
+      "image": "/uploads/logo-mastodon.svg",
+      "color": "sky",
+      "darker": true,
+      "classes": "p-4",
       "type": "link"
     },
     {
@@ -77,39 +100,29 @@
       "type": "link",
       "darker": false,
       "classes": "p-4"
-    },
-    {
-      "name": "mono.tone",
-      "content": "mono.tone is a self-hostable clone of solo.to!",
-      "url": "https://github.com/draedr/monotone/",
-      "invert": false,
-      "image": "/uploads/github.svg",
-      "color": "slate",
-      "type": "content",
-      "darker": false,
-      "classes": ""
-    },
-    {
-      "name": "@kettlevoid@koyu.space",
-      "url": "https://koyu.space/web/@kettlevoid",
-      "invert": true,
-      "image": "/uploads/logo-mastodon.svg",
-      "color": "sky",
-      "darker": true,
-      "classes": "p-4",
-      "type": "link"
     }
   ],
   "contacts": [
     {
       "icon": "email",
       "name": "Email",
-      "uri": "mailto:mtondelli1420@gmail.com"
+      "uri": "mailto:mtondelli1420@gmail.com",
+      "image": ""
     },
     {
       "icon": "phone",
       "name": "Phone",
-      "uri": "tel:123-456-7890"
+      "uri": "tel:123-456-7890",
+      "image": ""
+    },
+    {
+      "icon": "email",
+      "name": "Email",
+      "uri": "mailto:mtondelli1420@gmail.com",
+      "image": "https://materialdesignicons.com/api/download/icon/svg/14AAE073-8399-4D67-9F7E-8E9424328681"
     }
-  ]
+  ],
+  "custom_css": "",
+  "custom_content": "",
+  "footer_content": ""
 }

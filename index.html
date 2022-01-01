@@ -1,89 +1,93 @@
 ---
 templateEngineOverride: njk
-
 ---
 <!DOCTYPE html>
 <html lang="en" class="{{ 'dark' if app.theme.dark }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="{{app.theme.favicon}}" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="{{app.theme.favicon}}"/>
 
-    <title>{{ app.name }} - mono.tone</title>
+    <title>{{app.name}} - mono.tone</title>
 
-    <!-- import the webpage's stylesheet -->
+    <!-- import tailwind from PlayCDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {% if app.theme.dark == true %}
+      <!-- Enable Dark Mode via class -->
+      <script>
+        tailwind.config = {
+          darkMode: 'class'
+        }
+      </script>
+    {% endif %}
+
+    <!-- import MDI's Webfont -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+
     <style>
       .link {
         transition-duration: 0.3s;
       }
+
+      {{ app.custom_css }}
     </style>
 
-    <!-- import tailwind from PlayCDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    {% if app.theme.dark %}
-    <script>
-      tailwind.config = {
-        darkMode: 'class'
-      }
-    </script>
-    {% endif %}
-    <!-- import MDI's Webfont -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
   </head>
-  <style>{{app.custom_css}}</style>
   <body class="bg-gray-100 dark:bg-neutral-800">
+
     <!-- Header -->
-    <div class="relative bg-{{app.theme.color}}-100" style="background-image: url({{app.theme.background}}); background-size: cover;">
+    <div class="mono-header relative bg-{{app.theme.color}}-100" style="background-image: url({{app.theme.background}}); background-size: cover;">
+
       <!-- Spacers -->
       <div class="h-72"></div>
+
+      <!-- Header Image Cut -->
       <div
         class="h-72 bg-gray-100 dark:bg-neutral-800"
-        style="clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);"
-      ></div>
+        {% if app.theme.skew %}
+          style="clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);"
+        {% endif %}>
+      </div>
+
       <!-- Card -->
-      <div
-        class="absolute container max-w-screen-md bottom-8 left-0 right-0 mx-auto rounded md:shadow-2xl bg-gray-100 dark:bg-neutral-800 dark:bg-neutral-700 md:bg-white p-4"
-      >
+      <div class="mono-header-card absolute container max-w-screen-md bottom-8 left-0 right-0 mx-auto rounded md:shadow-2xl bg-gray-100 dark:bg-neutral-800 dark:bg-neutral-700 md:bg-white p-4">
         <!-- Avatar -->
         <img
           src="{{app.avatar}}"
-          class="absolute -top-12 left-0 right-0 mx-auto rounded-full h-40 w-40 bg-white shadow-2xl aspect-square"
-        />
+          class="mono-header-avatar absolute -top-12 left-0 right-0 mx-auto rounded-full h-40 w-40 bg-white shadow-2xl aspect-square"/>
         <!-- Spacer -->
         <div class="h-32"></div>
         <!-- Card Content -->
         <div class="flex flex-col mx-auto items-center gap-3">
           <!-- Name -->
-          <div class="text-3xl font-semibold text-black dark:text-white ">
+          <div class="mono-header-card-title text-3xl font-semibold text-black dark:text-white ">
             {{app.name}}
           </div>
           <!-- Location -->
           {% if app.location %}
-            <div class="flex flex-row text-gray-400 font-light gap-3">
+            <div class="mono-header-card-location-icon flex flex-row text-gray-400 font-light gap-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
                 viewBox="0 0 20 20"
-                fill="currentColor"
-              >
+                fill="currentColor">
                 <path
                   fill-rule="evenodd"
                   d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clip-rule="evenodd"
-                />
+                  clip-rule="evenodd"/>
               </svg>
-              <span class="text-lg">{{app.location}}</span>
+              <span class="mono-header-card-location-text text-lg">{{app.location}}</span>
             </div>
           {% endif %}
           <!-- Biography -->
           {% if app.location %}
-            <div class="max-w-xs text-md text-center text-black dark:text-white ">
+            <div class="mono-header-card-bio max-w-xs text-md text-center text-black dark:text-white ">
               {{app.bio}}
             </div>
           {% endif %}
           <!-- Contacts -->
-          <div class="flex flex-row gap-4">
-
+          <div class="mono-header-card-contacts flex flex-row flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
             {% for this in app.contacts %}
 
               {% if app.theme.dark %}
@@ -95,134 +99,199 @@ templateEngineOverride: njk
               {% endif %}
 
               {% if this.color %}
-            	{% set icon_color = this.color %}
+                {% set icon_color = this.color %}
               {% else %}
                 {% set icon_color = app.theme.color %}
               {% endif %}
-              <a
+
+              {% if app.theme.contacts.allsame %}
+
+                <a
                 href="{{this.uri}}"
                 rel="me"
-                class="text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center"
-              >
-                <span class="mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
-                {% if app.theme.contacts.name %}
-                  <span class="">{{@index}}{{this.name}}</span>
+                class="mono-header-card-contacts-item text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center">
+                  {% if this.image != "" %}
+                    <img 
+                    src="{{this.image}}"
+                    class="mono-header-card-image"/>
+                  {% else %}
+                    <span class="mono-header-card-contacts-icon mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
+                  {% endif %}
+
+                  {% if app.theme.contacts.name %}
+                    <span class="mono-header-card-contacts-name">{{@index}}{{this.name}}</span>
+                  {% endif %}
+                </a>
+
+              {% else %}
+
+                {% if loop.length > 3 %}
+
+                  {% if loop.index == 1 %}
+
+                    <a
+                      href="{{this.uri}}"
+                      rel="me"
+                      class="mono-header-card-contacts-item text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center">
+                      {% if this.image != "" %}
+                        <img 
+                          src="{{this.image}}"
+                          class="mono-header-card-image"/>
+                      {% else %}
+                        <span class="mono-header-card-contacts-icon mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
+                      {% endif %}
+
+                      {% if app.theme.contacts.name %}
+                        <span class="mono-header-card-contacts-name">{{@index}}{{this.name}}</span>
+                      {% endif %}
+                    </a>
+
+                    <div class="basis-full"></div>
+
+                  {% else %}
+                    <a
+                      href="{{this.uri}}"
+                      rel="me"
+                      class="mono-header-card-contacts-item text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-0 place-items-center">
+                      {% if this.image != "" %}
+                        <img 
+                          src="{{this.image}}"
+                          class="mono-header-card-image"/>
+                      {% else %}
+                        <span class="mono-header-card-contacts-icon mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
+                      {% endif %}
+                    </a>
+
+                  {% endif %}
+
+                {% else %}
+
+                  <a
+                  href="{{this.uri}}"
+                  rel="me"
+                  class="mono-header-card-contacts-item text-black dark:text-white {{ 'bg-' + contact_bg + ' hover:bg-' + contact_hover + '' if app.theme.contacts.full else 'border-2 border-' + contact_color + '-100 hover:border-' + contact_color + '-200'}} {{ 'rounded-full' if app.theme.contacts.rounded }} {{ 'aspect-square' if not app.theme.contacts.name }} px-4 py-2 flex flex-row gap-2 place-items-center">
+                    {% if this.image != "" %}
+                      <img 
+                      src="{{this.image}}"
+                      class="mono-header-card-image"/>
+                    {% else %}
+                      <span class="mono-header-card-contacts-icon mdi mdi-{{this.icon}} text-{{icon_color}}-500 text-xl"></span>
+                    {% endif %}
+
+                    {% if app.theme.contacts.name %}
+                      <span class="mono-header-card-contacts-name">{{@index}}{{this.name}}</span>
+                    {% endif %}
+                  </a>
+
                 {% endif %}
-              </a>
-            
+              {% endif %}
             {% endfor %}
           </div>
         </div>
       </div>
     </div>
 
+    <!-- (Conditional) Spacer -->    
+    {% if app.content[0].type != "content"  or app.content[0].type != "section" %}
+      <div class="mt-8"></div>
+    {% endif %}
+
     <!-- Links (grid) -->
-    <div
-      class="block md:grid md:grid-cols-2 md:gap-4 container max-w-screen-md mx-2 md:mx-auto mt-8"
-    >
+    <div class="mono-content-links block md:grid md:grid-cols-2 md:gap-4 container max-w-screen-md mx-2 md:mx-auto">
       {% set colspan = true %}
       {% for item in app.content %}
-
-          {% if item.type == "embed" %}
+        {% if item.type == "embed" %}
           <!-- Embed Object-->
-            <iframe class="rounded col-span-2 mt-4 shadow-2xl" width="100%" src="{{item.url}}"></iframe>
-            {% set colspan = true %}
+          <iframe class="mono-content-links-embed rounded col-span-2 mt-4 shadow-2xl" width="100%" src="{{item.url}}"></iframe>
+          {% set colspan = true %}
 
-          {% elif item.type == "section" %}
-            <div class="col-span-2 my-4 text-gray-700 dark:text-white text-2xl font-bold border-b pb-4 border-gray-700 dark:border-gray-300">{{item.name}}</div>
-            {% set colspan = true %}
-            
-          {% elif item.type == "content" %}
-          <div
-          class="block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row col-span-2"
-        >
-          <div class="flex-grow ml-8 p-4 rounded">
-            <!-- Content -->
-            <div class="block flex-grow ml-8">
-              <div class="text-lg dark:text-white text-black">{{item.name}}</div>
-              <div class="text-sm text-gray-400 font-light truncate">
-                {{item.content}}
+        {% elif item.type == "section" %}
+          <div class="mono-content-links-section col-span-2 my-4 text-gray-700 dark:text-white text-2xl font-bold border-b pb-4 border-gray-700 dark:border-gray-300">{{item.name}}</div>
+          {% set colspan = true %}
+
+        {% elif item.type == "content" %}
+          <div class="mono-content-links-content block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row col-span-2">
+            <div class="flex-grow ml-8 p-4 rounded">
+              <!-- Content -->
+              <div class="block flex-grow">
+                <div class="mono-content-links-content-name  ml-2 text-xl mb-2 dark:text-white text-black">{{item.name}}</div>
+                <div class="mono-content-links-content-content  ml-8 text-sm text-gray-400 font-light truncate">
+                  {{item.content}}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-            {% set colspan = true %}
-            
-          {% else %}
-          
+          {% set colspan = true %}
+
+        {% else %}
+
           <!-- Link Object -->
-            <a
+          <a
               href="{{item.url}}"
-              class="block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row {{ 'col-span-2' if colspan }}"
-            >
-              <div class="flex-grow ml-8 bg-white dark:bg-neutral-700  p-4 rounded shadow-2xl">
-                <!-- Image -->
-                
-                {% if (not item.name) or item.name == "" %}
-                  {% set name = item.url %}
-                {% else %}
-                  {% set name = item.name %}
-                {% endif %}
+              class="mono-content-links-link block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row {{ 'col-span-2' if colspan }}">
+            <div class="flex-grow ml-8 bg-white dark:bg-neutral-700  p-4 rounded shadow-2xl">
+              <!-- Image -->
 
-                {% if item.color == "black" %}
-                  {% set item_bg = "bg-black" %}
-                  {% set item_shadow = "shadow-black" %}
-                {% elif item.color == "white" %}
-                  {% set item_bg = "bg-white" %}
-                  {% set item_shadow = "shadow-white" %}
-                {% else %}
-                  {% set item_bg = "bg-" + item.color %}
-                  {% set item_shadow = "shadow-" + item.color + "-500" %}
-                {% endif %}
+              {% if (not item.name) 
+                or item.name == "" %}
+                {% set name = item.url %}
+              {% else %}
+                {% set name = item.name %}
+              {% endif %}
 
-                {% if item.darker %}
-                  {% set item_bg = item_bg + "-800" %}
-                {% else %}
-                  {% set item_bg = item_bg + "-400" %}
-                {% endif %}
-                
-                {% if item.content == "" %}
-                  {% set item_content = item.content %}
-                {% else %}
-                  {% set item_content = item.url %}
-                {% endif %}
+              {% if item.color == "black" %}
+                {% set item_bg = "bg-black" %}
+                {% set item_shadow = "shadow-black" %}
+              {% elif item.color == "white" %}
+                {% set item_bg = "bg-white" %}
+                {% set item_shadow = "shadow-white" %}
+              {% else %}
+                {% set item_bg = "bg-" + item.color %}
+                {% set item_shadow = "shadow-" + item.color + "-500" %}
+              {% endif %}
 
-                <div
-                  class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}"
-                >
-                  <img src="{{item.image}}" class="{{'invert' if item.invert}}">
+              {% if item.darker %}
+                {% set item_bg = item_bg + "-800" %}
+              {% else %}
+                {% set item_bg = item_bg + "-400" %}
+              {% endif %}
+
+              {% if item.content == "" %}
+                {% set item_content = item.content %}
+              {% else %}
+                {% set item_content = item.url %}
+              {% endif %}
+
+              <div
+                  class="mono-content-links-link-image absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}">
+                <img src="{{item.image}}" class="mono-content-links-image-file {{'invert' if item.invert}}">
+              </div>
+              <!-- Content -->
+              <div class="block flex-grow ml-8">
+                <div class="mono-content-links-link-name text-lg dark:text-white text-black">{{name}}</div>
+                <div class="mono-content-links-link-content text-sm text-gray-400 font-light truncate">
+                  {{item_content}}
                 </div>
-                <!-- Content -->
-                <div class="block flex-grow ml-8">
-                  <div class="text-lg dark:text-white text-black">{{name}}</div>
-                  <div class="text-sm text-gray-400 font-light truncate">
-                    {{item_content}}
-                  </div>
-                </div>
-                <!-- Arrow -->
-                <div
-                  class="absolute h-5 w-5 my-auto top-0 bottom-0 right-4 duration-75 ease-linear group-hover:translate-x-1.5 text-gray-400"
-                >
-                  <svg
+              </div>
+              <!-- Arrow -->
+              <div class="mono-content-links-link-arrow absolute h-5 w-5 my-auto top-0 bottom-0 right-4 duration-75 ease-linear group-hover:translate-x-1.5 text-gray-400">
+                <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-5 w-5"
                     viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
+                    fill="currentColor">
+                  <path
                       fill-rule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+                      clip-rule="evenodd"/>
+                </svg>
               </div>
-            </a>
-            {% set colspan = false %}
-          {% endif %}
+            </div>
+          </a>
+          {% set colspan = false %}
+        {% endif %}
       {% endfor %}
-
     </div>
 
     <!-- Spacer -->
@@ -231,18 +300,21 @@ templateEngineOverride: njk
     {% if app.theme.footer %}
       <!-- Footer -->
       <div
-        class="w-4/5 md:w-full py-4 container mx-auto border-t border-gray-300 flex flex-row place-items-center"
+        class="mono-footer w-4/5 md:w-full py-4 container mx-auto border-t border-gray-300 flex flex-row place-items-center"
       >
-        <div class="mdi mdi-console text-{{app.theme.color}}-500 text-3xl mx-2"></div>
-        <div class="flex-grow font-monospace text-gray-400">
+        <div class="mono-footer-monotone-icon mdi mdi-console text-{{app.theme.color}}-500 text-3xl mx-2"></div>
+        <div class="mono-footer-monotone-url font-monospace text-gray-400">
           mono.tone
         </div>
+        <div class="flex-grow">
+          <div class="mx-auto px-12 text-center text-sm">{{app.footer_content}}</div>
+        </div>
         {% if app.theme.repo %}
-          <a href="{{app.repo}}" class="mdi mdi-git text-{{app.theme.color}}-500 text-3xl mx-2"></a>
+          <a href="{{app.repo}}" class="mono-footer-repo mdi mdi-git text-{{app.theme.color}}-500 text-3xl mx-2"></a>
         {% endif %}
       </div>
     {% endif %}
-    
+
     {{app.custom_content}}
   </body>
 </html>

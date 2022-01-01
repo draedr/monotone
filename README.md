@@ -27,8 +27,8 @@ To have your username (or really anything) as a URL on netlify, you just need to
 3. Next to your domain name, press "Options" and then "Edit"
 
 # To-Do
-- Add custom classes to all elements for easier customizing with css
-- Better contacts display when multiple
-- Allow custom svg inside contacts OR move to fontawesome
+- ~~Add custom classes to all elements for easier customizing with css~~
+- ~~Better contacts display when multiple~~
+- ~~Allow custom images as contact icon~~
 - Re-create preset system
 - Write docs for who isn't using forestry and for custom classes

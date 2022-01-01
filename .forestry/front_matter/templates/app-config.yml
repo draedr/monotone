@@ -37,6 +37,11 @@ fields:
     type: boolean
     label: dark
     description: Use dark theme instead of light theme.
+  - name: skew
+    type: boolean
+    label: skew
+    default: true
+    description: Should the background image be cut diagonally.
   - name: color
     type: text
     config:
@@ -66,6 +71,11 @@ fields:
       label: rounded
       description: Makes the contact a pill if the name is shown, or a circle if it's
         not.
+    - name: allsame
+      type: boolean
+      label: all-same
+      default: true
+      description: Shows all the contact the same way, instead of showing the first bigger when having more than 3.
     - name: full
       type: boolean
       label: full
@@ -190,10 +200,12 @@ fields:
     label: uri
     description: The url to the contact, with relative protocol (like "mailto:" for
       emails or "tel:" for telephone numbers).
-  config:
-    min: 
-    max: 
-    labelField: name
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: image
+    default: ""
   label: contacts
 - name: custom_css
   type: textarea
@@ -215,5 +227,15 @@ fields:
   label: customcontent
   description: Can be used to add scripts to the end of the page, like tracking. For
     open-source analytics, we suggests you to try Plausible or Matomo.
+- name: footer_content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: footercontent
+  description: Stuff to add to the center of the footer.
 pages:
 - config/app.json
