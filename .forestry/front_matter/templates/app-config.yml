@@ -75,7 +75,8 @@ fields:
       type: boolean
       label: all-same
       default: true
-      description: Shows all the contact the same way, instead of showing the first bigger when having more than 3.
+      description: Shows all the contact the same way, instead of showing the first
+        bigger when having more than 3.
     - name: full
       type: boolean
       label: full
@@ -122,7 +123,7 @@ fields:
   - name: url
     type: text
     config:
-      required: true
+      required: false
     label: url
   - name: invert
     type: boolean
@@ -174,7 +175,7 @@ fields:
   config:
     min: 
     max: 
-    labelField: url
+    labelField: name
   label: content
 - name: contacts
   type: field_group_list
@@ -205,14 +206,14 @@ fields:
     config:
       maxSize: 64
     label: image
-    default: ""
+    default: ''
   label: contacts
 - name: custom_css
   type: textarea
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: custom css
