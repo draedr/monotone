@@ -123,7 +123,7 @@ fields:
   - name: url
     type: text
     config:
-      required: true
+      required: false
     label: url
   - name: invert
     type: boolean
