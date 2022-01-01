@@ -39,6 +39,16 @@
       "type": "link"
     },
     {
+      "name": "Personal",
+      "url": "",
+      "invert": false,
+      "image": "/uploads/github.svg",
+      "color": "slate",
+      "classes": "",
+      "darker": false,
+      "type": "section"
+    },
+    {
       "name": "@azurelighting",
       "url": "https://twitter.com/azurelighting",
       "invert": false,
@@ -67,6 +77,17 @@
       "type": "link",
       "darker": false,
       "classes": "p-4"
+    },
+    {
+      "name": "mono.tone",
+      "content": "mono.tone is a self-hostable clone of solo.to!",
+      "url": "https://github.com/draedr/monotone/",
+      "invert": false,
+      "image": "/uploads/github.svg",
+      "color": "slate",
+      "type": "content",
+      "darker": false,
+      "classes": ""
     },
     {
       "name": "@kettlevoid@koyu.space",

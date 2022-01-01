@@ -99,6 +99,16 @@ fields:
       required: false
     label: name
     description: The link name or the section's title. <br>Not used for embeds.
+  - name: content
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: content
+    description: Used as text in content or as description under links.
   - name: url
     type: text
     config:
@@ -199,7 +209,7 @@ fields:
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: customcontent

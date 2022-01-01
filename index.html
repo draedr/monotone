@@ -127,9 +127,28 @@ templateEngineOverride: njk
           <!-- Embed Object-->
             <iframe class="rounded col-span-2 mt-4 shadow-2xl" width="100%" src="{{item.url}}"></iframe>
             {% set colspan = true %}
+
           {% elif item.type == "section" %}
-            <div class="col-span-2 mt-4 text-gray-700 text-2xl font-bold border-b-2 pb-4 border-gray-700">{{item.name}}</div>
+            <div class="col-span-2 my-4 text-gray-700 dark:text-white text-2xl font-bold border-b pb-4 border-gray-700 dark:border-gray-300">{{item.name}}</div>
             {% set colspan = true %}
+            
+          {% elif item.type == "content" %}
+          <div
+          class="block group container md:mt-0 mt-4 max-w-screen mx-auto relative flex-row col-span-2"
+        >
+          <div class="flex-grow ml-8 p-4 rounded">
+            <!-- Content -->
+            <div class="block flex-grow ml-8">
+              <div class="text-lg dark:text-white text-black">{{item.name}}</div>
+              <div class="text-sm text-gray-400 font-light truncate">
+                {{item.content}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+            {% set colspan = true %}
+            
           {% else %}
           
           <!-- Link Object -->
@@ -162,6 +181,12 @@ templateEngineOverride: njk
                 {% else %}
                   {% set item_bg = item_bg + "-400" %}
                 {% endif %}
+                
+                {% if item.content == "" %}
+                  {% set item_content = item.content %}
+                {% else %}
+                  {% set item_content = item.url %}
+                {% endif %}
 
                 <div
                   class="absolute my-auto top-0 bottom-0 left-0 h-16 w-16 duration-75 ease-linear group-hover:-translate-y-1.5 shadow-2xl {{item_shadow}} {{item_bg}} {{item.classes}}"
@@ -172,7 +197,7 @@ templateEngineOverride: njk
                 <div class="block flex-grow ml-8">
                   <div class="text-lg dark:text-white text-black">{{name}}</div>
                   <div class="text-sm text-gray-400 font-light truncate">
-                    {{item.url}}
+                    {{item_content}}
                   </div>
                 </div>
                 <!-- Arrow -->
